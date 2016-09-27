@@ -6,4 +6,4 @@ Document generation based on *markdown to presentation* converter [Marp](https:/
 
 [--> Main work file](doc.md)
 
-[Presentation](doc.pdf)
+[--> Presentation](doc.pdf)

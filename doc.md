@@ -86,7 +86,7 @@ Activation function for the neurons. Diagrams [[1]](http://rasbt.github.io/mlxte
 - "hardtanh"
 - "maxout"
 - "softsign" (-1, 1)
-- "softplus" (0, ∞)
+- "softplus" (0, infinity)
 
 
 ---
@@ -107,6 +107,16 @@ Activation function for the neurons. Diagrams [[1]](http://rasbt.github.io/mlxte
 ---
 
 
+
+## Recommended configurations
+|Hidden Layer|Output Layer|WeightInit|
+|:-:|:-:|:-|
+|relu/leakyrelu|softmax (classification) |RELU
+|tanh|*linear*|XAVIER
+
+---
+
+
 ## Layer options
 ##### _`.lossFunction(LossFunctions.LossFunction.RMSE_XENT)`_
 Will be used for pretraining and the OutputLayer
@@ -122,14 +132,6 @@ Will be used for pretraining and the OutputLayer
 
 ---
 
-## Recommended configurations
-|Hidden Layer|Output Layer|WeightInit|
-|:-:|:-:|:-|
-|relu/leakyrelu|softmax (classification) |RELU
-|tanh|*linear*|XAVIER
-
----
-
 ## Generalization options
 ##### _.dropOut(double)_
 ##### _.l2(double)_
@@ -139,7 +141,9 @@ Will be used for pretraining and the OutputLayer
 
 
 ---
+
 # Layer types
+
 ---
 
 # RBM Layer
@@ -153,15 +157,10 @@ layera[0] = new RBM.Builder()
 .hiddenUnit(HiddenUnit.BINARY)
 .build()
 ```
----
-## RBM Layer
-
-##### _`.lossFunction(LossFunctions.LossFunction.*)`_
-
+[More about RBM](http://deeplearning4j.org/restrictedboltzmannmachine.html)
 
 ---
 
----
 ## RBM Layer
 
 ##### _`.visibleUnit(VisibleUnit.*).hiddenUnit(HiddenUnit.*)`_
@@ -180,7 +179,8 @@ layera[0] = new RBM.Builder()
 |SOFTMAX|BINARY||+
 |RECTIFIED|BINARY|| 0
 |GAUSSIAN|BINARY||-
-|RECTIFIED|RECTIFIED|continues data|--
+|GAUSSIAN|RECTIFIED|for continuous data|-
+|RECTIFIED|RECTIFIED||--
 |GAUSSIAN|GAUSSIAN||---
 *less stable configurations needs lower learning rates*
 

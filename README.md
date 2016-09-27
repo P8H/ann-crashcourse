@@ -5,4 +5,5 @@ Document is still under work, it's not final and maybe contains a many faults. C
 Document generation based on *markdown to presentation* converter [Marp](https://github.com/yhatt/marp/).
 
 [--> Main work file](doc.md)
+
 [Presentation](doc.pdf)
